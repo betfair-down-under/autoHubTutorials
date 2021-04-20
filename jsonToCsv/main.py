@@ -51,8 +51,8 @@ def load_markets(file_paths: List[str]):
     return None
 
 # rounding to 2 decimal places or returning '' if blank
-def as_str(v: float) -> str:
-    return '%.2f' % v if v is not None else ''
+def as_str(v) -> str:
+    return '%.2f' % v if type(v) is float else v if type(v) is str else ''
 
 # returning smaller of two numbers where min not 0
 def min_gr0(a: float, b: float) -> float:
@@ -162,14 +162,14 @@ with open("output.csv", "w") as output:
             print('market has no price data')
             continue; 
 
-        preplay_traded = [ (r.last_price_traded, r.ex.traded_volume) for r in preplay_market.runners ]
+        preplay_traded = [ (r.last_price_traded, r.ex.traded_volume) for r in preplay_market.runners ] if preplay_market is not None else None
         postplay_traded = [ (
             r.last_price_traded,
             r.ex.traded_volume,
             # calculating SP traded vol as smaller of back_stake_taken or (lay_liability_taken / (BSP - 1))        
             min_gr0(
                 next((pv.size for pv in r.sp.back_stake_taken if pv.size > 0), 0),
-                next((pv.size for pv in r.sp.lay_liability_taken if pv.size > 0), 0)  / ((r.sp.actual_sp or 0) - 1)
+                next((pv.size for pv in r.sp.lay_liability_taken if pv.size > 0), 0)  / ((r.sp.actual_sp if type(r.sp.actual_sp) is float else 0) - 1)
             )
         ) for r in postplay_market.runners ]
         
@@ -226,7 +226,7 @@ with open("output.csv", "w") as output:
                     'preplay_min': as_str(min_price),
                     'preplay_max': as_str(max_price),
                     'preplay_wavg': as_str(wavg),
-                    'preplay_matched': as_str(matched + sp_traded),
+                    'preplay_matched': as_str((matched or 0) + (sp_traded or 0)),
                     'inplay_ltp': '',
                     'inplay_min': '',
                     'inplay_max': '',
@@ -262,3 +262,4 @@ with open("output.csv", "w") as output:
                     rprices['inplay_matched'],
                 )
             )
+            
