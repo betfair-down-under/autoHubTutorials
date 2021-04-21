@@ -1,0 +1,1 @@
+This is the completed code for the tutorial on backtesting the betfair hub thoroughbred ratings available on [Betfair's Automation Hub here](https://betfair-datascientists.github.io/historicData/backtestingRatingsTutorial/).
