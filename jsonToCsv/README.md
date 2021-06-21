@@ -1,1 +1,3 @@
-This is the completed code for the tutorial converting historic JSON data to a CSV format found on [Betfair's Automation Hub here](https://betfair-datascientists.github.io/historicData/jsonToCsvTutorial/).
+# Using `betfairlightweight` to convert historic JSON data to CSV
+
+This is the completed code for the tutorial using `betfairlightweight` to convert Betfair's historic JSON data to a CSV format found on [Betfair's Automation Hub](https://betfair-datascientists.github.io/historicData/jsonToCsvTutorial/).
