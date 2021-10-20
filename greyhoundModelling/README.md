@@ -6,7 +6,7 @@ This project assume you have a developmemnt environment with [Python](https://ww
 
 Clone project
 ```
-git clone https://github.com/BrunoChauvet/greyhound-modelling.git
+git clone https://github.com/betfair-down-under/autoHubTutorials.git
 ```
 
 Install python libraries
