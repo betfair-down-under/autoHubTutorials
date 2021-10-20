@@ -11,7 +11,7 @@ git clone https://github.com/BrunoChauvet/greyhound-modelling.git
 
 Install python libraries
 ```
-cd greyhound-modellin
+cd greyhound-modelling
 pip install --user -r requirements.txt
 ```
 
