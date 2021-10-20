@@ -1,0 +1,16 @@
+python_dateutil
+requests
+pandas
+numpy
+xmltodict
+tqdm
+betfairlightweight
+flumine
+scipy
+scikit_learn
+notebook
+python-dotenv
+matplotlib
+tensorflow
+ipywidgets
+jinja2
