@@ -35,8 +35,8 @@ Below is the list of notebooks with detailed examples
 
 ### Feature Importance
 
-TODO
+Evaluates feature importance for each of the regression models
 
-### Models Ensemble
+### Complete Code
 
-TODO
+Both Logistic Regression and Feature Importance notebooks as a `.py` file
