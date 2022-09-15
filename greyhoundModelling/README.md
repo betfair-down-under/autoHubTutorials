@@ -37,6 +37,10 @@ Below is the list of notebooks with detailed examples
 
 Evaluates feature importance for each of the regression models
 
-### Complete Code
+## Complete Code
 
-Both Logistic Regression and Feature Importance notebooks as a `.py` file
+Both Logistic Regression and Feature Importance notebooks are available as a `.py` file, named `main.py` available in the root directory.
+
+Run python script
+
+`py main.py`
