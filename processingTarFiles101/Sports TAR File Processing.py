@@ -332,7 +332,7 @@ for tar in stream_files:
                         postplay_market.market_definition.event_name,
                         postplay_market.market_definition.name,
                         selection_id,
-                        selection_name,
+                        selection_name.encode('utf-8'),
                         selection_status
                     )
                 )
@@ -394,7 +394,7 @@ for tar in stream_files:
     for market in market_ids:
         # Create a dataframe and a naming convention for this market
         pricing_data = df[df['market_id'] == market]
-        fixture = pricing_data['event_name'].iloc[0]
+        fixture = pricing_data['event_name'].iloc[0].replace(r"/","")
         market_name = pricing_data['market_name'].iloc[0]
         market_time = pricing_data['market_time'].iloc[0]
         off = market_time.strftime('%Y-%m-%d')
